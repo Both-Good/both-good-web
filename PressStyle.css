@@ -11,6 +11,7 @@ body {
     background-image: url('imgs/starBg_0.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* same as style.css, so the stars stay window-sized on long pages */
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     image-rendering: -moz-crisp-edges; 
@@ -135,37 +136,24 @@ ul {
 }
 
 
-/* TOC */
+/* TOC: same look as the nav on the main site (style.css .site-nav) */
 .toc {
-    position: fixed;
-    top: 20px;
-    margin: 5px;
-    left: 10%;
-    width: 10%; /* Width of the TOC */
-    background-color: #000;
-     border: 2px solid #ccc;
-}
-
-.toc ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.toc ul li {
-    margin-bottom: 10px;
+    font-family: "Syne Mono", monospace;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    padding: 20px 16px 10px;
+    line-height: 2;
 }
 
 .toc a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    display: block;
-    padding: 5px 0;
-    transition: color 0.3s ease;
+    color: #ffab3d; /* matches --link in style.css */
 }
 
 .toc a:hover {
-    color: orange;
+    color: black;
+    background: #ffab3d;
+    text-decoration: none;
 }
 
 .photo-section {
@@ -240,27 +228,6 @@ ul {
     padding: 10px;
   }
 
-  /* Move the TOC into the document flow, full width */
-  .toc {
-    position: static;
-    width: 100%;
-    margin: 0 0 20px;
-    padding: 10px;
-    box-shadow: none;
-    border: none;
-  }
-  .toc ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .toc li {
-    margin: 5px;
-  }
-  .toc a {
-    display: inline-block;
-    padding: 5px 8px;
-  }
 
   /* Make iframes and images scale down */
   iframe,
@@ -281,9 +248,6 @@ ul {
 
 @media (max-width: 480px) {
   /* Tighter typography & spacing */
-  .toc a {
-    font-size: 0.9rem;
-  }
   .padding {
     padding: 8px;
   }
