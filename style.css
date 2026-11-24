@@ -465,3 +465,9 @@ b, strong {
 #contact .signup-section {
     margin-top: 40px;
 }
+
+/* ===== BACKGROUND TEST: brick wall instead of the stars =====
+   To go back to stars, delete this block. */
+body {
+    background-image: url('imgs/brickBg.png');
+}
