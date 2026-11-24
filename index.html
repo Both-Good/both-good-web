@@ -16,13 +16,14 @@
     <meta property="og:image:width" content="1280">
     <meta property="og:image:height" content="720">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="header.css?v=2">
+    <link rel="stylesheet" href="style.css?v=7">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Syne+Mono&display=swap" rel="stylesheet">
 
-    <script src="index.js?v=2"></script>
+    <script src="index.js?v=3"></script>
     <script src="jigglyText.js?v=3"></script>
     <script src="signup.js?v=2"></script>
 
@@ -33,12 +34,12 @@
     <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
-    <header>
-        <a href="index.html"><img src="imgs/BG logo.png" class="logo" alt="Both Good" draggable="false"></a>
+    <header class="site-header">
+        <a href="./"><img src="imgs/BG logo.png" class="logo" alt="Both Good" draggable="false"></a>
         <nav class="site-nav">
-            <a href="#games">games</a> ·
-            <a href="#team">team</a> ·
-            <a href="#press">press</a> ·
+            <a href="#games">games</a>
+            <a href="#team">team</a>
+            <a href="#press">press</a>
             <a href="#contact">contact</a>
         </nav>
     </header>
@@ -57,11 +58,13 @@
             <section class="game" id="doctor-thunder">
                 <h1>In Development</h1>
 
-                <!-- Using the Steam header for now. For the layered hover effect like the
-                     other games, add imgs/DT_Bot.png + imgs/DT_Top.png and use a back/front pair. -->
                 <div class="image-stack">
+                    <!-- art behind, monitor frame on top -->
+                    <div class="image back">
+                        <a href="doctor-thunder/"><img src="imgs/DT_Top.png" class="wide" alt="DOCTOR THUNDER 500000 V OVERCHARGED" draggable="false"></a>
+                    </div>
                     <div class="image front">
-                        <a href="doctor-thunder/"><img src="imgs/DT_header.jpg" class="wide framed" alt="DOCTOR THUNDER 500000 V OVERCHARGED" draggable="false"></a>
+                        <a href="doctor-thunder/"><img src="imgs/DT_Bot.png" class="wide" alt="" draggable="false"></a>
                     </div>
                 </div>
 
@@ -81,18 +84,6 @@
                     <p><b>Are you a publisher?</b> Reach out to us for our current pitch deck!</p>
                     <p><a href="mailto:bothgood@bothgood.games?subject=DOCTOR%20THUNDER%20pitch%20deck">bothgood@bothgood.games</a></p>
                 </div>
-            </section>
-
-            <section class="signup-section">
-                <h2>Stay up to date</h2>
-                <p>Get an email when we have news. Not too often, promise.</p>
-                <form class="signup" action="https://assets.mailerlite.com/jsonp/1327539/forms/204511100450899014/subscribe" method="post">
-                    <label for="signup-email-home" class="visually-hidden">Email</label>
-                    <input id="signup-email-home" type="email" name="fields[email]" placeholder="you@email.com" required autocomplete="email">
-                    <div class="captcha-slot"></div>
-                    <button type="submit">sign me up</button>
-                    <p class="signup-status" aria-live="polite"></p>
-                </form>
             </section>
 
             <hr>
@@ -224,6 +215,17 @@
                     <a href="https://www.x.com/BothGoodGames">
                         <img src="imgs/XIcon.png" alt="X / Twitter">
                     </a>
+                </div>
+                <div class="signup-section">
+                    <h2>Stay up to date</h2>
+                    <p>Get an email when we have news. Not too often, promise.</p>
+                    <form class="signup" action="https://assets.mailerlite.com/jsonp/1327539/forms/204511100450899014/subscribe" method="post">
+                        <label for="signup-email-home" class="visually-hidden">Email</label>
+                        <input id="signup-email-home" type="email" name="fields[email]" placeholder="you@email.com" required autocomplete="email">
+                        <div class="captcha-slot"></div>
+                        <button type="submit">sign me up</button>
+                        <p class="signup-status" aria-live="polite"></p>
+                    </form>
                 </div>
             </section>
         </main>
