@@ -1,0 +1,52 @@
+/* Shared top-of-page header (Both Good logo + orange button nav).
+   Loaded by the homepage, the game pages and the DT / Golftacular press kits,
+   so they all look the same even though the press kits use PressStyle.css. */
+
+:root {
+    --link: #ffab3d; /* orange, to match the DOCTOR THUNDER logo */
+}
+
+.site-header {
+    text-align: center;
+    margin: 0 0 18px;
+}
+
+.site-header .logo {
+    display: block;
+    width: 200px;
+    max-width: 60%;
+    height: auto;
+    margin: 0 auto;
+    image-rendering: pixelated;
+}
+
+.site-header > a,
+.site-header > a:hover {
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.site-nav {
+    font-family: "Syne Mono", monospace;
+    font-size: 16px;
+    line-height: 2.4;
+    margin: 6px 0 0;
+}
+
+/* orange buttons: orange text and outline on black, fills orange with black text on hover */
+.site-nav a {
+    color: var(--link);
+    background: black;
+    border: 2px solid var(--link);
+    padding: 1px 7px;
+    margin: 0 3px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.site-nav a:hover {
+    color: black;
+    background: var(--link);
+}

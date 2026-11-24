@@ -11,6 +11,7 @@ body {
     background-image: url('imgs/starBg_0.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* same as style.css, so the stars stay window-sized on long pages */
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     image-rendering: -moz-crisp-edges; 
@@ -28,10 +29,11 @@ h1, h2 {
 }
 
 .container {
+    box-sizing: border-box; /* so it lines up with the hero image above */
     max-width: 50%;
     min-height: 100%;
     margin: 0 auto;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.75);
     border: solid white 2px;
     position: relative;
 }
@@ -135,39 +137,6 @@ ul {
 }
 
 
-/* TOC */
-.toc {
-    position: fixed;
-    top: 20px;
-    margin: 5px;
-    left: 10%;
-    width: 10%; /* Width of the TOC */
-    background-color: #000;
-     border: 2px solid #ccc;
-}
-
-.toc ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.toc ul li {
-    margin-bottom: 10px;
-}
-
-.toc a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    display: block;
-    padding: 5px 0;
-    transition: color 0.3s ease;
-}
-
-.toc a:hover {
-    color: orange;
-}
-
 .photo-section {
   padding: 20px;
   display: block; /* reset any flex stuff */
@@ -216,12 +185,24 @@ ul {
     height: auto;           /* preserve aspect */
     object-fit: contain;    /* no crop */
 }
-.hero-image img, .footer-art img {
+.footer-art img {
     width: 50%;
     max-width: 1200px;
     display: block;
     margin: 0 auto;
     border-radius: 12px; /* optional */
+}
+
+/* hero art sits flush on top of the white box: same width, and the
+   white border runs around the image and into the box below */
+.hero-image img {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-bottom: none;
+    border-radius: 0;
 }
 
 
@@ -240,27 +221,6 @@ ul {
     padding: 10px;
   }
 
-  /* Move the TOC into the document flow, full width */
-  .toc {
-    position: static;
-    width: 100%;
-    margin: 0 0 20px;
-    padding: 10px;
-    box-shadow: none;
-    border: none;
-  }
-  .toc ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .toc li {
-    margin: 5px;
-  }
-  .toc a {
-    display: inline-block;
-    padding: 5px 8px;
-  }
 
   /* Make iframes and images scale down */
   iframe,
@@ -281,9 +241,6 @@ ul {
 
 @media (max-width: 480px) {
   /* Tighter typography & spacing */
-  .toc a {
-    font-size: 0.9rem;
-  }
   .padding {
     padding: 8px;
   }
@@ -291,4 +248,10 @@ ul {
     width: 28px;
     height: 28px;
   }
+}
+
+/* ===== BACKGROUND TEST: brick wall instead of the stars =====
+   To go back to stars, delete this block. */
+body {
+    background-image: url('imgs/brickBg.png');
 }
