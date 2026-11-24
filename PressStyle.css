@@ -29,6 +29,7 @@ h1, h2 {
 }
 
 .container {
+    box-sizing: border-box; /* so it lines up with the hero image above */
     max-width: 50%;
     min-height: 100%;
     margin: 0 auto;
@@ -136,26 +137,6 @@ ul {
 }
 
 
-/* TOC: same look as the nav on the main site (style.css .site-nav) */
-.toc {
-    font-family: "Syne Mono", monospace;
-    font-size: 16px;
-    text-align: center;
-    color: white;
-    padding: 20px 16px 10px;
-    line-height: 2;
-}
-
-.toc a {
-    color: #ffab3d; /* matches --link in style.css */
-}
-
-.toc a:hover {
-    color: black;
-    background: #ffab3d;
-    text-decoration: none;
-}
-
 .photo-section {
   padding: 20px;
   display: block; /* reset any flex stuff */
@@ -204,12 +185,24 @@ ul {
     height: auto;           /* preserve aspect */
     object-fit: contain;    /* no crop */
 }
-.hero-image img, .footer-art img {
+.footer-art img {
     width: 50%;
     max-width: 1200px;
     display: block;
     margin: 0 auto;
     border-radius: 12px; /* optional */
+}
+
+/* hero art sits flush on top of the white box: same width, and the
+   white border runs around the image and into the box below */
+.hero-image img {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-bottom: none;
+    border-radius: 0;
 }
 
 
